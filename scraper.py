@@ -16,3 +16,15 @@ soup = BeautifulSoup(response.text, 'html.parser')
  
 
 print(soup.title.text)
+
+import csv
+
+ 
+
+with open('data.csv', 'w', newline='') as file:
+
+    writer = csv.writer(file)
+
+    writer.writerow(["Title"])
+
+    writer.writerow([soup.title.text])
