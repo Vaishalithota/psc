@@ -28,3 +28,10 @@ with open('data.csv', 'w', newline='') as file:
     writer.writerow(["Title"])
 
     writer.writerow([soup.title.text])
+        
+    additional_data = soup.find_all('p')
+
+    for data in additional_data:
+
+        writer.writerow([data.text])
+
